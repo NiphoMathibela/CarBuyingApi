@@ -2,7 +2,7 @@
 {
     public class CarsForSaleDbSettings
     {
-        public string ConnectionSring { get; set; } = null!;
+        public string ConnectionString { get; set; } = null!;
 
         public string DatabaseName { get; set; } = null!;
 
