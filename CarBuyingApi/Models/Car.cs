@@ -16,7 +16,11 @@ namespace CarBuyingApi.Models
 
         public decimal Price { get; set; }
 
+        public int Mileage {  get; set; }
+
         public string GearType { get; set; } = null!;
+
+        public string FuelType { get; set; } = null!;
 
         public string Engine { get; set; } = null!;
 

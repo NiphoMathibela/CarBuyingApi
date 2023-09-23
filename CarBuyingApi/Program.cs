@@ -1,10 +1,13 @@
 using CarBuyingApi.Models;
+using CarBuyingApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<CarsForSaleDbSettings>(
     builder.Configuration.GetSection("CarsForSaleDatabase"));
+
+builder.Services.AddSingleton<CarService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
