@@ -10,7 +10,7 @@ namespace CarBuyingApi.Models
         public string? Id { get; set; }
 
         [BsonElement("Name")]
-        public string CarNameee { get; set; } = null!;
+        public string CarName { get; set; } = null!;
 
         public string Brand { get; set; } = null!;
 
