@@ -30,7 +30,7 @@ namespace CarBuyingApi.Models
 
         public decimal FuelCons {  get; set; }
 
-        public string Seats { get; set; } = null!;
+        public int Seats { get; set; }
 
     }
 }
