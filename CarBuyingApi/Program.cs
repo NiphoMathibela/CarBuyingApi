@@ -14,6 +14,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Creating cross origin policy
+
+var  CarPolicy = "CarPolicy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: CarPolicy,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                      });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +35,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(CarPolicy);
 
 app.UseHttpsRedirection();
 

@@ -2,6 +2,8 @@
 using CarBuyingApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Http.Cors;
+using Microsoft.AspNetCore.Cors;
 
 namespace CarBuyingApi.Controllers
 {
@@ -30,6 +32,7 @@ namespace CarBuyingApi.Controllers
         }
 
         [HttpPost]
+        [Microsoft.AspNetCore.Cors.EnableCors("CarPolicy")]
         public async Task<IActionResult> Post(Car newCar)
         {
             await _carService.CreateAsync(newCar);
