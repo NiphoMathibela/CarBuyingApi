@@ -9,6 +9,9 @@ builder.Services.Configure<CarsForSaleDbSettings>(
 
 builder.Services.AddSingleton<CarService>();
 
+//Added user service
+builder.Services.AddSingleton<UserService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
