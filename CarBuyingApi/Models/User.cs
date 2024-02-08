@@ -5,7 +5,6 @@ namespace CarBuyingApi.Models
 {
     public class User
     {
-
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
@@ -19,7 +18,7 @@ namespace CarBuyingApi.Models
 
         public string Password { get; set; } = null!;
 
-        public string UserType { get; set; } = null!;
+        public string UserType { get; set; }
 
     }
 }

@@ -5,7 +5,7 @@ using CarBuyingApi.Models;
 namespace CarBuyingApi.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("user/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {

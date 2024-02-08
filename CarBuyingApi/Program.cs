@@ -25,7 +25,20 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: CarPolicy,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                          policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+                      });
+});
+//End of cross origin
+
+//Creating cross origin polic
+var UserPolicy = "UserPolicy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: UserPolicy,
+                      policy =>
+                      {
+                          policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
                       });
 });
 //End of cross origin
@@ -41,6 +54,9 @@ if (app.Environment.IsDevelopment())
 
 //Adding useCors
 app.UseCors(CarPolicy);
+
+//Adding useCofs for UserPolicy
+app.UseCors(UserPolicy);
 
 app.UseHttpsRedirection();
 
