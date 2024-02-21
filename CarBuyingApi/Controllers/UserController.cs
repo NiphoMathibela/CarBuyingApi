@@ -19,10 +19,12 @@ namespace CarBuyingApi.Controllers
         public async Task<List<User>> Get() =>
         await _userService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
-        public async Task<ActionResult<User>> Get(string id)
+
+        [HttpGet("{email}")]
+        [Microsoft.AspNetCore.Cors.EnableCors("CarPolicy")]
+        public async Task<ActionResult<User>> Get(string email)
         {
-            var user = await _userService.GetAsync(id);
+            var user = await _userService.GetAsync(email);
 
             if (user is null)
             {
